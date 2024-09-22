@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf8f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff9800;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        #notes-section {
+            margin: 2em auto;
+            padding: 1em;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .note-list {
+            list-style: none;
+            padding: 0;
+            margin: 1em 0;
+        }
+
+        .note-item {
+            background-color: #fff3e0;
+            margin: 0.5em 0;
+            padding: 1em;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #ff9800;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        button {
+            display: block;
+            margin: 1em auto;
+            padding: 0.75em 1.5em;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e68900;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>College Notes</h1>
+    </header>
+
+    <section id="notes-section">
+        <h2>Important Notes</h2>
+        <div class="note-list" id="noteList">
+            <!-- Notes will appear here -->
+        </div>
+        <button id="loadMoreNotesBtn">Load More Notes</button>
+    </section>
+
+    <footer>
+        <p>© 2024 College Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Sample data for notes
+        const notes = [
+            "Chapter 5 notes are due on September 23.",
+            "Physics assignment submission extended to September 27.",
+            "Mathematics revision class on September 25 at 10 AM.",
+            "Economics quiz rescheduled to September 28.",
+            "Submit lab reports by September 30.",
+            "New study material available for Chemistry.",
+            "Final project submission guidelines updated.",
+        ];
+
+        let currentNoteIndex = 0;
+        const loadNoteAmount = 3; // Number of notes to show per click
+
+        // Function to load more notes
+        function loadMoreNotes() {
+            const noteList = document.getElementById('noteList');
+
+            for (let i = currentNoteIndex; i < currentNoteIndex + loadNoteAmount && i < notes.length; i++) {
+                const noteItem = document.createElement('div');
+                noteItem.className = 'note-item';
+                noteItem.textContent = notes[i];
+                noteList.appendChild(noteItem);
+            }
+
+            currentNoteIndex += loadNoteAmount;
+
+            // Hide the button if all notes are loaded
+            if (currentNoteIndex >= notes.length) {
+                document.getElementById('loadMoreNotesBtn').style.display = 'none';
+            }
+        }
+
+        document.getElementById('loadMoreNotesBtn').addEventListener('click', loadMoreNotes);
+
+        // Load initial notes on page load
+        loadMoreNotes();
+    </script>
+
+</body>
+</html>

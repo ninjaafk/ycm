@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Updates - College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        #updates-section {
+            margin: 2em auto;
+            padding: 1em;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .update-list {
+            list-style: none;
+            padding: 0;
+            margin: 1em 0;
+        }
+
+        .update-item {
+            background-color: #e7f1ff;
+            margin: 0.5em 0;
+            padding: 1em;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        button {
+            display: block;
+            margin: 1em auto;
+            padding: 0.75em 1.5em;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003f8a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>College Daily Updates</h1>
+    </header>
+
+    <section id="updates-section">
+        <h2>Latest Updates</h2>
+        <div class="update-list" id="updateList">
+            <!-- Updates will appear here -->
+        </div>
+        <button id="loadMoreBtn">Load More</button>
+    </section>
+
+    <footer>
+        <p>© 2024 College Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Sample data
+        const updates = [
+            "Campus Sports Day on September 25.",
+            "New library books available for borrowing.",
+            "Computer lab timings extended till 8 PM.",
+            "Guest lecture by Dr. John Smith on Artificial Intelligence.",
+            "Online admission portal maintenance on September 22.",
+            "Career counseling session for final-year students.",
+            "Hostel fee payment deadline extended till September 30.",
+        ];
+
+        let currentIndex = 0;
+        const loadAmount = 3; // Number of updates to show per click
+
+        // Function to load more updates
+        function loadMoreUpdates() {
+            const updateList = document.getElementById('updateList');
+
+            for (let i = currentIndex; i < currentIndex + loadAmount && i < updates.length; i++) {
+                const updateItem = document.createElement('div');
+                updateItem.className = 'update-item';
+                updateItem.textContent = updates[i];
+                updateList.appendChild(updateItem);
+            }
+
+            currentIndex += loadAmount;
+
+            // Hide the button if all updates are loaded
+            if (currentIndex >= updates.length) {
+                document.getElementById('loadMoreBtn').style.display = 'none';
+            }
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', loadMoreUpdates);
+
+        // Load initial updates on page load
+        loadMoreUpdates();
+    </script>
+
+</body>
+</html>

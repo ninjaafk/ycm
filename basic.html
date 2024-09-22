@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Skills</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to  existing CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        #skills-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+            color: #fff;
+            padding: 40px;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            width: 300px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: #4ecca3;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .btn-back {
+            background-color: #4ecca3;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 40px;
+        }
+
+        .btn-back:hover {
+            background-color: #3abf99;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="skills-container">
+        <h1>Basic Skills</h1>
+        <h2>Master the Essentials</h2>
+
+        <div class="skills-list">
+            <div class="skill-card">
+                <i class="ri-computer-line"></i>
+                <h3>Tally-ERP-9</h3>
+                <p>"Learn the fundamentals of using Tally ERP 9, understanding its features, and improving business productivity with accounting technology."</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="ri-pencil-ruler-line"></i>
+                <h3>Computer Literacy</h3>
+                <p>Learn the fundamentals of using computers, understanding software, and improving productivity with technology.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="ri-code-line"></i>
+                <h3>Excel</h3>
+                <p>"Discover the basics of Excel, harness its advanced features, and streamline data management to boost productivity and decision-making."</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="ri-presentation-line"></i>
+                <h3>Public Speaking</h3>
+                <p>Develop confidence in presenting ideas, leading discussions, and engaging with your audience.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="ri-money-dollar-circle-line"></i>
+                <h3>Financial Literacy</h3>
+                <p>Learn how to manage personal finances, budget, save, and make informed financial decisions.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-back">← Back to Home</a>
+    </div>
+
+</body>
+</html>
